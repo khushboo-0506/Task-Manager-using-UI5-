@@ -1,0 +1,10 @@
+<mvc:View 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns="sap.m" 
+  controllerName="app.Second">
+  <App>
+    <Page title="Second View">
+      <Button text="Call other method" press="onPressed"/>
+    </Page>
+  </App>
+  </mvc:View>
