@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="in.sijas.ui5.app.LandingPage">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="in.sijas.ui5.app.controller.LandingPage">
 <App>
   <Page title="{i18n>pageTitle}">
     <TextArea value="{/message}"/>
