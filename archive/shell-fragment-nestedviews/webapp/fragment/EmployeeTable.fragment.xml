@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+<Table>
+              <headerToolbar>
+                <Toolbar>
+                    <Title text="Employees"/>
+                </Toolbar>
+              </headerToolbar>
+              <columns>
+                <Column>
+                  <Label text="First Name"/>
+                </Column>
+                <Column>
+                  <Label text="Last Name"/>
+                </Column>
+                <Column>
+                  <Label text="Age"/>
+                </Column>
+                <Column>
+                  <Label text="Email Address"/>
+                </Column>
+              </columns>
+              <items>
+                <ColumnListItem>
+                  <Text text="Mohammed"/>
+                  <Text text="Sijas"/>
+                  <Text text="29"/>
+                  <Text text="me@sijas.in"/>
+                </ColumnListItem>
+                <ColumnListItem>
+                  <Text text="Anha"/>
+                  <Text text="Sijas"/>
+                  <Text text="1"/>
+                  <Text text="baby@sijas.in"/>
+                </ColumnListItem>
+              </items>
+            </Table>
+</core:FragmentDefinition>
