@@ -2,7 +2,6 @@
 <Shell backgroundImage="./resource/bg.jpg" logo="./resource/logo.png">
   <App>
     <Page title="{i18n>pageTitle}">
-      <mvc:XMLView viewName="in.sijas.ui5.app.view.SecondView"/>
       <core:Fragment type="XML" fragmentName="in.sijas.ui5.app.fragment.EmployeeTable"/>
     </Page>
   </App>

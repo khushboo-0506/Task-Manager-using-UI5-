@@ -1,8 +1,11 @@
 sap.ui.define([
   'sap/ui/core/mvc/Controller',
   'sap/m/MessageToast',
-  'sap/ui/core/ValueState'
-], function (Controller, MessageToast, ValueState) {
+  'sap/ui/core/ValueState',
+  'sap/ui/model/Filter',
+  'sap/ui/model/FilterOperator',
+  'sap/ui/model/Sorter'
+], function (Controller, MessageToast, ValueState,Filter, FilterOperator,Sorter) {
   'use strict';
 
   return Controller.extend("in.sijas.ui5.app.controller.LandingPage", {
@@ -25,6 +28,47 @@ sap.ui.define([
       var i18nText = this.getOwnerComponent().getModel("i18n").getResourceBundle(),
         sReturnValue = i18nText.getText("combine_names",[sFname,sLname]);
         return sReturnValue;
+    },
+    searchEmployee : function(oEvt){
+      var sQuery = oEvt.getParameter("query"),
+          aFilter = [new Filter("firstName",FilterOperator.Contains,sQuery),new Filter("lastName",FilterOperator.Contains,sQuery)],
+          oTable = this.getView().byId("employeeTable"),
+          oBinding = oTable.getBinding("items"),
+          oFilter = null;
+          if(sQuery.length!=0){
+            oFilter = new Filter({
+              filters: aFilter,
+              and : false
+            });
+          }      
+          oBinding.filter(oFilter);
+    },
+    openSettings : function(){
+      if(!this.employeeSettings){
+        this.employeeSettings = this.loadFragment({
+          name : "in.sijas.ui5.app.fragment.EmployeeSettings"
+        });
+      }
+      this.employeeSettings.then(function(oDialog){
+        oDialog.open();
+      });
+    },
+    applySettings : function(oEvt){
+        var sortItem = oEvt.getParameter("sortItem"),
+            groupItem = oEvt.getParameter("groupItem"),
+            sortDesc = oEvt.getParameter("sortDescending"),
+            groupDesc = oEvt.getParameter("groupDescending"),
+            oTable = this.getView().byId("employeeTable"),
+            oBinding = oTable.getBinding("items"),
+            oSorter = null;
+        if(sortItem) {
+          oSorter = new Sorter(sortItem.getKey(),sortDesc);
+        }
+
+        if(groupItem){
+          oSorter = new Sorter(groupItem.getKey(),groupDesc,true);
+        }
+        oBinding.sort(oSorter);
     }
   });
 });

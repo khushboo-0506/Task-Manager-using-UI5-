@@ -1,8 +1,11 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-<Table items="{/data}">
+<SearchField search="searchEmployee"/>
+<Table id="employeeTable" items="{employee>/data}">
               <headerToolbar>
                 <Toolbar>
                     <Title text="Employees"/>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://settings" press="openSettings"/>
                 </Toolbar>
               </headerToolbar>
               <columns>
@@ -18,9 +21,9 @@
               </columns>
               <items>
                 <ColumnListItem>
-                  <Text text="{parts:[{path:'fname'},{path:'lname'}],formatter:'.formatName'}"/>
-                  <Text text="{age}"/>
-                  <ObjectStatus text="{score}" state="{path:'score',formatter:'.formatScoreState'}"/>
+                  <Text text="{parts:[{path:'employee>firstName'},{path:'employee>lastName'}],formatter:'.formatName'}"/>
+                  <Text text="{employee>age}"/>
+                  <ObjectStatus text="{employee>score}" state="{path:'employee>score',formatter:'.formatScoreState'}"/>
                 </ColumnListItem>
               </items>
             </Table>

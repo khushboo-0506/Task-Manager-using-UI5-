@@ -8,6 +8,12 @@
     "description" : "{{description}}",
     "applicationVersion" :{
       "version" : "1.0.0"
+    },
+    "dataSources" : {
+      "tableData" : {
+        "uri" : "./data/data.json",
+        "type" : "JSON"
+      }
     }
   },
   "sap.ui":{
@@ -40,6 +46,10 @@
           "supportedLocales" :[""],
           "fallbackLocale" : ""
         }
+      },
+      "employee" : {
+        "type" : "sap.ui.model.json.JSONModel",
+        "dataSource" : "tableData"
       }
     }
   }
