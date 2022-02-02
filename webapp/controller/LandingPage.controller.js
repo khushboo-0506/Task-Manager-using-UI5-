@@ -31,7 +31,7 @@ sap.ui.define([
     },
     searchEmployee : function(oEvt){
       var sQuery = oEvt.getParameter("query"),
-          aFilter = [new Filter("firstName",FilterOperator.Contains,sQuery),new Filter("lastName",FilterOperator.Contains,sQuery)],
+          aFilter = [new Filter("FirstName",FilterOperator.Contains,sQuery),new Filter("LastName",FilterOperator.Contains,sQuery)],
           oTable = this.getView().byId("employeeTable"),
           oBinding = oTable.getBinding("items"),
           oFilter = null;

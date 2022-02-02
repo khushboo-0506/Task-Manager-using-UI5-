@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
 <SearchField search="searchEmployee"/>
-<Table id="employeeTable" items="{employee>/data}">
+<Table id="employeeTable" items="{/Employees}" growing="true">
               <headerToolbar>
                 <Toolbar>
                     <Title text="Employees"/>
@@ -9,11 +9,14 @@
                 </Toolbar>
               </headerToolbar>
               <columns>
+               <Column>
+                  <Label text="Employee ID"/>
+                </Column>
                 <Column>
                   <Label text="Name"/>
                 </Column>
                 <Column>
-                  <Label text="Age"/>
+                  <Label text="City"/>
                 </Column>
                 <Column>
                   <Label text="Score"/>
@@ -21,10 +24,11 @@
               </columns>
               <items>
                 <ColumnListItem>
-                  <Text text="{parts:[{path:'employee>firstName'},{path:'employee>lastName'}],formatter:'.formatName'}"/>
-                  <Text text="{employee>age}"/>
-                  <ObjectStatus text="{employee>score}" state="{path:'employee>score',formatter:'.formatScoreState'}"/>
-                </ColumnListItem>
+                  <Text text="{EmployeeID}"/>
+                  <Text text="{parts:[{path:'FirstName'},{path:'LastName'}],formatter:'.formatName'}"/>
+                  <Text text="{City}"/>
+                  <Text text="{Notes}"/>
+                   </ColumnListItem>
               </items>
             </Table>
 </core:FragmentDefinition>
