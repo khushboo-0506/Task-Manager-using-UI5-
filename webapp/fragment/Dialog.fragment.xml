@@ -1,10 +1,10 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-    <Dialog title="{i18n>dialogTitle}" class="sapUiResponsiveContentPadding">
+  <Dialog id="dialogId" title="{i18n>dialogTitle}" class="sapUiResponsiveContentPadding">
     <content>
       <Text text="{i18n>contentMessage}"/>
     </content>
     <endButton>
-      <Button text="{i18n>btnClose}" press=".closeDialog"/>
+      <Button text="{i18n>btnClose}" press="onCloseDialog"/>
     </endButton>
-    </Dialog>
+  </Dialog>
 </core:FragmentDefinition>

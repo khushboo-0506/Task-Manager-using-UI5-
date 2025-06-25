@@ -1,8 +1,0 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="in.sijas.ui5.app.LandingPage">
-<App>
-  <Page title="UI5 model and bindings">
-    <TextArea value="{/message}"/>
-    <Button class="sapUiMediumMarginBegin" text="Show Data" press="onPress"/>
-  </Page>
-</App>
-</mvc:View>

@@ -2,16 +2,33 @@ sap.ui.define([
   'sap/ui/core/UIComponent',
   'sap/ui/model/json/JSONModel',
   'sap/ui/model/BindingMode'
-], function (UIComponent,JSONModel,BindingMode) {
+], function (UIComponent, JSONModel, BindingMode) {
   'use strict';
 
-  return UIComponent.extend("in.sijas.ui5.app.Component", {
+  return UIComponent.extend("in.khushboo.ui5.app.Component", {
     metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest" : "json"
+      interfaces: ["sap.ui.core.IAsyncContentCreation"],
+      manifest: "json"
     },
+
     init: function () {
       UIComponent.prototype.init.apply(this, arguments);
+
+      var oData = {
+        employee: {
+          firstName: "",
+          lastName: "",
+          age: "",
+          salary: "",
+          email: ""
+        },
+        employees: []
+      };
+
+      var oModel = new JSONModel(oData);
+      oModel.setDefaultBindingMode(BindingMode.TwoWay);
+      this.setModel(oModel, "empModel");
+
       this.getRouter().initialize();
     }
   });

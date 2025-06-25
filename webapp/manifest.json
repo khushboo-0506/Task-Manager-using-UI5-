@@ -1,7 +1,7 @@
 {
   "_version": "1.12.0",
   "sap.app": {
-    "id": "in.sijas.ui5.app",
+    "id": "in.khushboo.ui5.app",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "title": "{{pageTitle}}",
@@ -34,7 +34,7 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "in.sijas.ui5.app.view.App",
+      "viewName": "in.khushboo.ui5.app.view.App",
       "type": "XML",
       "id": "app"
     },
@@ -49,7 +49,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "in.sijas.ui5.app.i18n.i18n",
+          "bundleName": "in.khushboo.ui5.app.i18n.i18n",
           "supportedLocales": [""],
           "fallbackLocale": ""
         }
@@ -68,7 +68,7 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
-        "viewPath": "in.sijas.ui5.app.view",
+        "viewPath": "in.khushboo.ui5.app.view",
         "controlId": "app",
         "controlAggregation": "pages",
         "viewType": "XML"
@@ -79,7 +79,12 @@
           "target": ["landing_page"]
         },
         {
-          "pattern": "create",
+           "pattern": "create",
+           "name": "createWithoutIndex",
+           "target": ["create"]
+        },
+        {
+          "pattern": "create/{index}",
           "name": "create",
           "target": ["create"]
         },

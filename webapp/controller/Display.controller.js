@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
   'use strict';
 
-  return Controller.extend("in.sijas.ui5.app.controller.Display", {
+  return Controller.extend("in.khushboo.ui5.app.controller.Display", {
     onInit: function () {
       this.getRouter().getRoute("display").attachPatternMatched(this._objectRouteMatched.bind(this));
     },

@@ -1,7 +1,0 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="in.sijas.ui5.app.controller.SecondView">
-   <Panel>
-      <Button text="{i18n>btnText}" press=".onPress"/>
-      <Input type="Text"/>
-      <Button text="{i18n>btnTxtDialog}" press=".openDialog"/>
-   </Panel>
-</mvc:View>

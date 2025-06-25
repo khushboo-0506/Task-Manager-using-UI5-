@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  xmlns="sap.m" controllerName="in.sijas.ui5.app.controller.Display">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  xmlns="sap.m" controllerName="in.khushboo.ui5.app.controller.Display">
      <VBox>  
           <Label text="First Name"/>
           <Input type="Text" value="{fname}"/>
